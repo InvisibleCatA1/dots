@@ -1,6 +1,8 @@
 import os
 
-os.system("git pull")
+
+user = "invisiblecat"
+os.chdir(f"/home/{user}/.config/")
 directorys = [
     "hypr",
     "alacritty",
@@ -10,12 +12,13 @@ directorys = [
     "light"
 ]
 
+os.system("git pull")
+
 os.system(f"git add README.md {os.path.basename(__file__)}")
-files = 0
+
 for dir in directorys:
     os.system(f"git add {dir}")
-    files += 1
 
-os.system(f"git commit -m 'Update Dots - {files} file(s) updated'")
+os.system(f"git commit -m 'Update Dots'")
 os.system(f"git push")
     
