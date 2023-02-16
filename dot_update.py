@@ -13,9 +13,16 @@ directorys = [
     "light"
 ]
 
+files = {
+    "README.md",
+    os.path.basename(__file__),
+    "install.sh"
+}
+
 os.system("git pull")
 
-os.system(f"git add README.md {os.path.basename(__file__)}")
+for file in files:
+    os.system(f"git add {file}")
 
 for dir in directorys:
     os.system(f"git add {dir}")
