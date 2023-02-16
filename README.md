@@ -10,4 +10,4 @@ Install:
 3. Run: ./install.sh
 ```
 
-This will install these dots on your system, and update them when you restart your computer
+This will install these dots on your system, and update them when you restart your computer if using hyprland. If you dont want this remove the ``exec-once = python3 ~/.config/dot_update.py`` line in ``~/.config/hypr/hyprland.conf``
