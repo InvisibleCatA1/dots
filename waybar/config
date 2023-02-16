@@ -1,0 +1,137 @@
+{
+    "gtk-layer-shell": true,
+	"layer": "top",
+	"modules-left": ["network", "custom/storage", "cpu","memory", "tray"],
+	"modules-center": ["wlr/workspaces"],
+	"modules-right": ["pulseaudio", "custom/weather", "clock", "battery", "custom/power"],
+	
+	"pulseaudio": {
+               "tooltip": false,
+               "scroll-step": 5,
+               "format": "{icon} {volume}%",
+		"format-muted": "✖ {volume}%",
+                      "format-icons": {
+                          "headphone": "",
+			"default": "🔊&#xFE0E;"
+                      },
+        "on-click":"amixer set Master toggle"
+	},
+    "wlr/workspaces": {
+        "sort-by-name": true,
+        "format": "{name}",
+        "on-click": "activate"
+    },
+    "hyprland/window": {
+        "format": "{}",
+    },
+
+	"network": {
+		"tooltip": false,
+        "format": "{icon} {essid}",
+        "format-alt": "{icon} {ipaddr} - {signalStrength}%",
+        "format-alt-click": "click-left",
+        "format-icons": {
+            "wifi": "",
+            "ethernet": "",
+            "disconnected": ""
+        },
+        "on-click-right": "alacritty -e sudo nmtui"
+	},
+	"backlight": {
+		"format": " {}%",
+		"interval":1,
+                "on-scroll-up": "light -A 5",
+                "on-scroll-down": "light -U 5",
+                "interval": 2,
+                "align": 0,
+                "rotate": 0,
+                "format": "{icon} {percent}%",
+                "format-icons": ["", "", "", ""],
+                "on-click": "",
+                "on-scroll-up": "light -A 5%",
+                "on-scroll-down": "light -U 5%",
+                "smooth-scrolling-threshold": 1,
+	},
+    "battery": {
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 20
+        },
+        "format": "{capacity}% {icon}",
+        "format-charging": "ϟ{capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-alt": "{time} {icon}",
+        "format-icons": ["", "", "", "", "", "", "", "", "", "🔋&#xFE0E;"],
+    },
+    "tray": {
+	"icon-size":18,
+	"spacing": 10
+    },
+    "clock": {
+        "format": "{:⏱ %I:%M %p}",
+	"format-alt": "{: ⏱ %I:%M %p - 📅&#xFE0E; %m/%d/%Y}"
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        },
+        "tooltip": false
+    },
+    "cpu": {
+        "interval": 15,
+        "format": " {}%",
+        "max-length": 10
+    },
+    "memory": {
+        "interval": 30,
+        "format": " {used}GiB/{total}GiB",
+        "format-alt": " {}%"
+        
+    },
+    "custom/bgchange": {
+	"format": "⟳",
+	"on-click": "exec ~/.config/waybar/modules/change.sh" 
+    },
+    "custom/media": {
+        "interval": 30,
+        "format": "{icon} {}",
+        "return-type": "json",
+        "max-length": 20,
+        "format-icons": {
+            "spotify": " ",
+            "default": " "
+        },
+        "escape": true,
+        "exec": "$HOME/.config/waybar/modules/mediaplayer.py 2> /dev/null",
+        "on-click": "playerctl play-pause"
+    },
+    "custom/weather": {
+	    "format": "{}",
+        "format-alt": "{alt}: {}",
+        "format-alt-click": "click-left",
+        "interval": 1800,
+        "return-type": "json",
+        "exec": "~/.config/waybar/modules/weather.sh",
+        "exec-if": "ping wttr.in -c1"
+    },
+    "custom/storage": {
+        "format": "🖴 {}iB/800GiB",
+        "format-alt": "🖴 {percentage}% Used",
+        "format-alt-click": "click-left",
+        "return-type": "json",
+        "interval": 60,
+        "exec": "~/.config/waybar/modules/storage.sh"
+    },
+    "custom/power":{
+        "format": "⏻",
+        "on-click": "wlogout -p layer-shell"
+    },
+    "custom/launcher": {
+        "format": "✎",
+        "on-click": "gamemoderwofi --show drun"
+    }
+
+}
