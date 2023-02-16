@@ -27,6 +27,5 @@ for file in files:
 for dir in directorys:
     os.system(f"git add {dir}")
 
-os.system(f"""git commit -m 'Update Dot - {date_now.strftime("%d/%m/%Y %H:%M:%S")}'""")
+os.system(f"""git commit -m 'Update Dots - {date_now.strftime("%d/%m/%Y %H:%M:%S")}'""")
 os.system(f"git push")
-    
