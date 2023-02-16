@@ -10,7 +10,8 @@ directorys = [
     "swaylock",
     "wofi",
     "waybar",
-    "light"
+    "light",
+    "dunst"
 ]
 
 files = {
