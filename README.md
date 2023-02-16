@@ -1,3 +1,3 @@
 # My dots
 
-Pretty Cool
+Pretty cool I guess
