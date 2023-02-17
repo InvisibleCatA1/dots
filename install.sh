@@ -3,7 +3,7 @@
 read -p "Press any key to install InvisibleCat's dotfiles..."
 echo ""
 
-echo "Moveing to config dir..."
+echo "Moving to config dir..."
 config="/home/$USER/.config"
 cd $config
 
