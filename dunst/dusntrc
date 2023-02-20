@@ -1,13 +1,14 @@
 [global]
     monitor = 0
     follow = mouse
-    geometry = "320x5-25+60"
+    width = "320"
+    offset = 25x60
     indicate_hidden = yes
     shrink = no
     transparency = 0
-    notification_height = 0
     separator_height = 2
-    padding = 10
+    padding = 8
+    gap_size = 5
     horizontal_padding = 10
     frame_width = 1
     frame_color = "#232323"
@@ -32,15 +33,12 @@
     sticky_history = yes
     history_length = 20
     always_run_script = true
-    startup_notification = false
-    verbosity = mesg
+    progress_bar = true
     corner_radius = 0
     force_xinerama = false
     mouse_left_click = close_current
     mouse_middle_click = do_action
     mouse_right_click = close_all
-
-[shortcuts]
     close = ctrl+space
     close_all = ctrl+shift+space
     history = ctrl+grave
@@ -49,12 +47,14 @@
 [urgency_low]
     background = "#232323"
     foreground = "#a8a8a8"
-    timeout = 10
+    timeout = 8
+    icon = /usr/share/icons/Paper/24x24/status/info.png
 
 [urgency_normal]
     background = "#232323"
     foreground = "#a8a8a8"
-    timeout = 10
+    timeout = 8
+    icon = /usr/share/icons/Paper/24x24/status/info.png
 
 [urgency_critical]
     background = "#d64e4e"
