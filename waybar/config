@@ -132,6 +132,16 @@
     "custom/launcher": {
         "format": "✎",
         "on-click": "gamemoderwofi --show drun"
+    },
+    "custom/openvpn": {
+        "format": "{}",
+		"interval": "once",
+		"exec": "exec ~/.config/waybar/modules/openvpn.sh print",
+		"tooltip": "false",
+		"on-click": "exec ~/.config/waybar/modules/openvpn.sh",
+		"signal": 8,
+        "all-outputs": "true",
+        "return-type": "json"
     }
 
 }
