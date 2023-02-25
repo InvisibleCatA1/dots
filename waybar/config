@@ -134,10 +134,10 @@
         "on-click": "gamemoderwofi --show drun"
     },
     "custom/playerctl": {
-		"format": "{}",
+		"format": "🎝 {}",
 		"return-type": "json",
 		"max-length": 40,
-		"exec": "$HOME/.local/lib/waybar/playerctl.sh 2> /dev/null",
+		"exec": "unbuffer $HOME/.local/lib/waybar/playerctl.sh 2> /dev/null",
 		"on-click": "playerctl play-pause",
 		"on-right-click": "sys-notif media",
 		"on-scroll-up": "playerctl position 3+",
