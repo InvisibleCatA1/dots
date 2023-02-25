@@ -3,7 +3,7 @@
 	"layer": "top",
 	"modules-left": ["network", "custom/storage", "cpu","memory", "tray"],
 	"modules-center": ["wlr/workspaces"],
-	"modules-right": ["pulseaudio", "custom/weather", "clock", "battery", "custom/power"],
+	"modules-right": ["custom/playerctl", "pulseaudio", "custom/weather", "clock", "battery", "custom/power"],
 	
 	"pulseaudio": {
                "tooltip": false,
@@ -133,15 +133,15 @@
         "format": "✎",
         "on-click": "gamemoderwofi --show drun"
     },
-    "custom/openvpn": {
-        "format": "{}",
-		"interval": "once",
-		"exec": "exec ~/.config/waybar/modules/openvpn.sh print",
-		"tooltip": "false",
-		"on-click": "exec ~/.config/waybar/modules/openvpn.sh",
-		"signal": 8,
-        "all-outputs": "true",
-        "return-type": "json"
-    }
+    "custom/playerctl": {
+		"format": "{}",
+		"return-type": "json",
+		"max-length": 40,
+		"exec": "$HOME/.local/lib/waybar/playerctl.sh 2> /dev/null",
+		"on-click": "playerctl play-pause",
+		"on-right-click": "sys-notif media",
+		"on-scroll-up": "playerctl position 3+",
+		"on-scroll-down": "playerctl position 3-"
+	}
 
 }
