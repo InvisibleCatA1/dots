@@ -11,7 +11,8 @@ directorys = [
     "wofi",
     "waybar",
     "light",
-    "dunst"
+    "dunst",
+    "spicetify"
 ]
 
 files = {
