@@ -3,7 +3,7 @@
 	"layer": "top",
 	"modules-left": ["network", "custom/storage", "cpu","memory", "tray"],
 	"modules-center": ["wlr/workspaces"],
-	"modules-right": ["custom/playerctl", "pulseaudio", "custom/weather", "clock", "battery", "custom/power"],
+	"modules-right": ["bluetooth", "pulseaudio", "custom/weather", "clock", "battery", "custom/power"],
 	
 	"pulseaudio": {
                "tooltip": false,
@@ -90,6 +90,13 @@
         "format": " {used}GiB/{total}GiB",
         "format-alt": " {}%"
         
+    },
+    "bluetooth": {
+        "format-alt": "bluetooth: {status}",
+        "format-on": "",
+        "format-off": "!",
+        "on-click-right": "blueman-manager",
+        "tooltip-format": "{status}"
     },
     "custom/bgchange": {
 	"format": "⟳",
