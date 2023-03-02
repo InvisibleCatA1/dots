@@ -12,13 +12,13 @@ directorys = [
     "waybar",
     "light",
     "dunst",
-    "spicetify"
 ]
 
 files = {
     "README.md",
     os.path.basename(__file__),
-    "install.sh"
+    "install.sh",
+    "spicetify/config-xpui.ini"
 }
 
 os.system("git pull")
