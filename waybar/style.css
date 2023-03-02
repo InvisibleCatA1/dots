@@ -1,7 +1,7 @@
 * {
 	border: none;
 	border-radius: 10px;
-    font-family: "SauceCodePro Nerd Font";
+        font-family: "SauceCodePro Nerd Font";
 	font-size: 15px;
 	min-height: 10px;
 	background-color: transparent;
@@ -26,9 +26,13 @@ window#waybar.hidden {
 #workspaces button {
         padding: 0 0 0 0;
         margin: 4px 3px 6px 4px;
-        background-color: transparent;
+        background-color: #0f0b0b;
         color: #B5E8E0;
         min-width: 36px;
+        border-top: 2px solid #363535;
+        border-bottom: 2px solid #363535;
+        border-left: 2px solid #363535;
+        border-right: 2px solid #363535;
 }
 
 #workspaces button.active {
@@ -55,12 +59,8 @@ window#waybar.hidden {
 
 
 #workspaces {
-        background-color: #0f0b0b;
+        background-color: transparent;
         transition: none;
-		border-top: 2px solid #ABE9B3;
-        border-bottom: 2px solid #90c497;
-        border-left: 2px solid #ABE9B3;
-        border-right: 2px solid #ABE9B3;
         color: #B5E8E0;
 }
 
@@ -89,7 +89,7 @@ window#waybar.hidden {
 #custom-weather,
 #custom-storage,
 #custom-launcher, 
-#custom-bgchange {
+#custom-spotify {
 	margin-top: 6px;
 	margin-bottom: 6px;
 	margin-left: 8px;
@@ -100,10 +100,10 @@ window#waybar.hidden {
 	border-radius: 10px;
 	transition: none;
 
-	border-top: 2px solid #ABE9B3;
-    border-bottom: 2px solid #ABE9B3;
-    border-left: 2px solid #ABE9B3;
-    border-right: 2px solid #ABE9B3;
+        border-top: 2px solid #ABE9B3;
+        border-bottom: 2px solid #ABE9B3;
+        border-left: 2px solid #ABE9B3;
+        border-right: 2px solid #ABE9B3;
 	
 	color: #ABE9B3;
 	background-color: #0f0b0b;

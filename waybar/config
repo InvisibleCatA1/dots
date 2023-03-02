@@ -1,19 +1,19 @@
 {
     "gtk-layer-shell": true,
 	"layer": "top",
-	"modules-left": ["network", "custom/storage", "cpu","memory", "tray"],
+	"modules-left": ["network", "custom/storage", "memory","cpu", "tray"],
 	"modules-center": ["wlr/workspaces"],
-	"modules-right": ["bluetooth", "pulseaudio", "custom/weather", "clock", "battery", "custom/power"],
+	"modules-right": ["custom/spotify", "bluetooth", "pulseaudio", "custom/weather", "clock", "battery", "custom/power"],
 	
 	"pulseaudio": {
-               "tooltip": false,
-               "scroll-step": 5,
-               "format": "{icon} {volume}%",
+        "tooltip": false,
+        "scroll-step": 0.75,
+        "format": "{icon} {volume}%",
 		"format-muted": "✖ {volume}%",
-                      "format-icons": {
-                          "headphone": "",
-			"default": "🔊&#xFE0E;"
-                      },
+        "format-icons": {
+            "headphone": "",
+		    "default": "🔊&#xFE0E;"
+        },
         "on-click":"amixer set Master toggle"
 	},
     "wlr/workspaces": {
@@ -87,12 +87,12 @@
     },
     "memory": {
         "interval": 30,
-        "format": " {used}GiB/{total}GiB",
-        "format-alt": " {}%"
+        "format": " {}%",
+        "format-alt": " {used}GiB/{total}GiB"
         
     },
     "bluetooth": {
-        "format-alt": "bluetooth: {status}",
+        "format-alt": " status: {status}",
         "format-on": "",
         "format-off": "!",
         "on-click-right": "blueman-manager",
@@ -102,18 +102,14 @@
 	"format": "⟳",
 	"on-click": "exec ~/.config/waybar/modules/change.sh" 
     },
-    "custom/media": {
+    "custom/spotify": {
+        "format": "{}  ",
+        "max-length": 60,
         "interval": 30,
-        "format": "{icon} {}",
         "return-type": "json",
-        "max-length": 20,
-        "format-icons": {
-            "spotify": " ",
-            "default": " "
-        },
-        "escape": true,
-        "exec": "$HOME/.config/waybar/modules/mediaplayer.py 2> /dev/null",
-        "on-click": "playerctl play-pause"
+        "exec": "~/.config/waybar/modules/spotify/metadata.sh",
+        "signal": 5,
+        "smooth-scrolling-threshold": 1.0
     },
     "custom/weather": {
 	    "format": "{}",
@@ -125,8 +121,8 @@
         "exec-if": "ping wttr.in -c1"
     },
     "custom/storage": {
-        "format": "🖴 {}iB/800GiB",
-        "format-alt": "🖴 {percentage}% Used",
+        "format": "🖴 {percentage}%",
+        "format-alt": "🖴 {}iB/800GiB",
         "format-alt-click": "click-left",
         "return-type": "json",
         "interval": 60,
