@@ -1,9 +1,9 @@
 {
     "gtk-layer-shell": true,
 	"layer": "top",
-	"modules-left": ["network", "custom/storage", "memory","cpu", "tray"],
+	"modules-left": ["network", "custom/storage", "memory","cpu", "custom/spotify","tray"],
 	"modules-center": ["wlr/workspaces"],
-	"modules-right": ["custom/spotify", "bluetooth", "pulseaudio", "custom/weather", "clock", "battery", "custom/power"],
+	"modules-right": ["bluetooth", "pulseaudio", "custom/weather", "clock", "battery", "custom/power"],
 	
 	"pulseaudio": {
         "tooltip": false,
@@ -108,6 +108,9 @@
         "interval": 30,
         "return-type": "json",
         "exec": "~/.config/waybar/modules/spotify/metadata.sh",
+        "on-click": "~/.config/waybar/modules/spotify/controls.sh",
+        "on-click-right": "~/.config/waybar/modules/spotify/controls.sh next",
+        "on-double-click": "~/.config/waybar/modules/spotify/controls.sh prev",
         "signal": 5,
         "smooth-scrolling-threshold": 1.0
     },
